@@ -16,6 +16,36 @@
           "destination" : {
             "comments" : "",
             "groupId" : "0616d5ee-24fe-33fb-81ae-cf36a1f6ab67",
+            "id" : "3e94a8ee-c949-3c89-9ad1-d3e17b8b1964",
+            "name" : "LogMessage",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "0616d5ee-24fe-33fb-81ae-cf36a1f6ab67",
+          "identifier" : "5ef7524e-ff6f-3988-a43b-ba7093be94d4",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "0616d5ee-24fe-33fb-81ae-cf36a1f6ab67",
+            "id" : "c6d6af18-6a67-32ee-8725-62ebc208cfb4",
+            "name" : "LogMessage",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "0616d5ee-24fe-33fb-81ae-cf36a1f6ab67",
             "id" : "c6d6af18-6a67-32ee-8725-62ebc208cfb4",
             "name" : "LogMessage",
             "type" : "PROCESSOR"
@@ -52,6 +82,57 @@
         },
         "processGroups" : [ ],
         "processors" : [ {
+          "autoTerminatedRelationships" : [ "success" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "0616d5ee-24fe-33fb-81ae-cf36a1f6ab67",
+          "identifier" : "3e94a8ee-c949-3c89-9ad1-d3e17b8b1964",
+          "name" : "LogMessage",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 872.0,
+            "y" : 232.0
+          },
+          "properties" : {
+            "log-message" : "${message1}",
+            "log-level" : "info"
+          },
+          "propertyDescriptors" : {
+            "log-message" : {
+              "displayName" : "Log message",
+              "identifiesControllerService" : false,
+              "name" : "log-message",
+              "sensitive" : false
+            },
+            "log-level" : {
+              "displayName" : "Log Level",
+              "identifiesControllerService" : false,
+              "name" : "log-level",
+              "sensitive" : false
+            },
+            "log-prefix" : {
+              "displayName" : "Log prefix",
+              "identifiesControllerService" : false,
+              "name" : "log-prefix",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.LogMessage",
+          "yieldDuration" : "1 sec"
+        }, {
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -125,7 +206,7 @@
           "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
           "yieldDuration" : "1 sec"
         }, {
-          "autoTerminatedRelationships" : [ "success" ],
+          "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
             "artifact" : "nifi-standard-nar",
@@ -178,7 +259,8 @@
         } ],
         "remoteProcessGroups" : [ ],
         "variables" : {
-          "message" : "This is the Hello you are looking for"
+          "message" : "This is the Hello you are looking for",
+          "message1" : "This is the second message, if the flow ever runs!!"
         }
       },
       "flowEncodingVersion" : "1.0",
