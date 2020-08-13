@@ -1,0 +1,6 @@
+flows:
+  256f9f93-13c8-4941-8e14-0a46b24c5a1b: {ver: 1, file: poc_hello_world.snapshot, comments: '',
+    author: anonymous, created: 1597317247081, flowName: poc_hello_world, flowDesc: Check
+      Git checkin}
+layoutVer: 1
+bucketId: 16080eb0-55b5-4c26-bd2e-308dfbe060e6
